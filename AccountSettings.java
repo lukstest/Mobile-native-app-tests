@@ -24,9 +24,7 @@ public class AccountSettings {
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 // Parental Control
-        //wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAStaticText[2]")).click();
         String ParCon = wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAStaticText[2]")).getAttribute("name");
-        //wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAStaticText[2]")).sendKeys(ParCon);
         String Liczba1 = ParCon.substring(0, 1);
         String Liczba2 = ParCon.substring(4, 5);
         int Liczba1Int = Integer.parseInt(Liczba1);
@@ -35,12 +33,11 @@ public class AccountSettings {
         String ParConResultStr = String.valueOf(ParConResult);
         wd.findElement(By.name(ParConResultStr)).click();
 
-// Logowanie mail
+// Login
         wd.findElement(By.name("Log In")).click();
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATextField[1]")).sendKeys("lukasz.z@harimata.co");
-        wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]")).sendKeys("wisla1906");
+        wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]")).sendKeys("test1234");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAButton[1]")).click();
-
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 // Parental Control 2
@@ -52,8 +49,7 @@ public class AccountSettings {
         int ParConResult_1 = Liczba1Int_1 * Liczba2Int_1;
         String ParConResultStr_1 = String.valueOf(ParConResult_1);
         wd.findElement(By.name(ParConResultStr_1)).click();
-
-
+        
 // Account settings
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIAStaticText[1]")).click();
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[1]/UIATextField[1]")).clear();
@@ -62,16 +58,12 @@ public class AccountSettings {
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[2]/UIATextField[1]")).sendKeys("Zar123");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[3]/UIATextField[1]")).clear();
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[3]/UIATextField[1]")).sendKeys("Autotest@harimata.co");
+        
 // Change password
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[4]")).click();
-
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]")).sendKeys("wisla1906");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[2]")).sendKeys("newpass");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[3]")).sendKeys("newpass");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[3]/UIAButton[1]")).click();
-
-
-
-
     }
 }
