@@ -17,10 +17,9 @@ public class AccountSettings {
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("platformVersion", "8.1");
         capabilities.setCapability("deviceName", "iPad 2");
-        java.lang.String appBundle = "com.harimata.Launcher";
+        java.lang.String appBundle = "com.hari.Launcher";
         capabilities.setCapability("app", appBundle);
         AppiumDriver wd = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 // Parental Control
@@ -35,7 +34,7 @@ public class AccountSettings {
 
 // Login
         wd.findElement(By.name("Log In")).click();
-        wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATextField[1]")).sendKeys("lukasz.z@harimata.co");
+        wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATextField[1]")).sendKeys("lukasz.z@hari.co");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]")).sendKeys("test1234");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAButton[1]")).click();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -61,7 +60,7 @@ public class AccountSettings {
         
 // Change password
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[4]")).click();
-        wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]")).sendKeys("wisla1906");
+        wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[1]")).sendKeys("test123");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[2]")).sendKeys("newpass");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIASecureTextField[3]")).sendKeys("newpass");
         wd.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIANavigationBar[3]/UIAButton[1]")).click();
