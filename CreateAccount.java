@@ -18,7 +18,7 @@ public class CreateAccount {
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("platformVersion", "8.1");
         capabilities.setCapability("deviceName", "iPad 2");
-        java.lang.String appBundle = "com.harimata.Launcher";
+        java.lang.String appBundle = "com.hari.Launcher";
         capabilities.setCapability("app", appBundle);
         AppiumDriver wd = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
 
@@ -34,13 +34,6 @@ public class CreateAccount {
         String ParConResultStr = String.valueOf(ParConResult);
         wd.findElement(By.name(ParConResultStr)).click();
         wd.findElement(By.name("     Sign up with e-mail")).click();
-
-
-
-
-        //create account
-
-
 
 //  Validate all fields
         wd.findElement(By.name("Save")).click();
